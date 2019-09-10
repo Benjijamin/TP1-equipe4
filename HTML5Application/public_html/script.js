@@ -13,7 +13,10 @@
  *test refresh page
  *test score
  *test score mid game
- *test si bonne transition
+ *test si bonne transition entre level
+ *test si y click sur autre qu'un etoile
+ *test transition fin
+ *test fonctionnement des boutons
  */
 
 
