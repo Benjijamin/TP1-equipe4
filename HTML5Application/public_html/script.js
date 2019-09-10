@@ -22,3 +22,15 @@
 function resetReponse() {
     window.location.reload();
 }
+
+function showScore(){
+    
+    
+    
+}
+
+function round(){
+    
+    
+    
+}
