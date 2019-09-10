@@ -18,7 +18,21 @@
  *test transition fin
  *test fonctionnement des boutons
  */
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+var img = new Image();
+img.onload = function(){
+context.drawImage(img,0,0,300,150);    
+};
+img.src = "images/bg.jpg";
 
+var spawnZone = canvas.style.height;
+
+var etoiles = [];
+
+function spawnEtoile(){
+    
+}
 function resetReponse() {
     window.location.reload();
 }
