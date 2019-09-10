@@ -19,4 +19,6 @@
  *test fonctionnement des boutons
  */
 
-
+function resetReponse() {
+    window.location.reload();
+}
