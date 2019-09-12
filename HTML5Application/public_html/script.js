@@ -41,8 +41,8 @@ function spawnEtoile(){
     
   // console.log('ben');
    
-    var randomXPosition = Math.floor(Math.random() * (canvas.style.width - 100)) + 1;
-    var randomYPosition = Math.floor(Math.random() * (canvas.style.height - 94)) + 1;
+    var randomXPosition = Math.floor(Math.random() * canvas.width) + 1;
+    var randomYPosition = Math.floor(Math.random() * canvas.height) + 1;
      
      var newStar = {
         xPosition: randomXPosition,
@@ -50,7 +50,7 @@ function spawnEtoile(){
     };
     
     stars.push(newStar);
-    context.drawImage(images[3],0,0);
+    context.drawImage(images[3],randomXPosition,randomYPosition);
 }
 function resetReponse() {
     window.location.reload();
