@@ -30,11 +30,29 @@ var spawnZone = canvas.style.height;
 
 var etoiles = [];
 
+
+var stageWidth = 300;
+var stageHeight = 150;
+var starWidth = 10;
+var starHeight = 15;
+
+var stars = [];
+
+
 function spawnEtoile(){
     
-    var img =document.write('<img src="images/'+ Math.round((Math.random()*3)+1)+ '.png" id="img">'); 
-    
+  // console.log('ben');
+   
+    var randomXPosition = Math.floor(Math.random() * (stageWidth - starWidth)) + 1;
+    var randomYPosition = Math.floor(Math.random() * (stageHeight - starHeight)) + 1;
      
+     var newStar = {
+        xPosition: randomXPosition,
+        yPosition: randomYPosition
+    };
+    
+    stars.push(newStar);
+
 }
 function resetReponse() {
     window.location.reload();
