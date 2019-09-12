@@ -28,15 +28,22 @@ img.src = "images/bg.jpg";
 
 var spawnZone = canvas.style.height;
 
-var etoiles = [];
+var etoiles = new Array();
+etoiles[0] = new Image();
+etoiles[0].src = 'images/1.png';
+etoiles[1] = new Image();
+etoiles[1].src = 'images/2.png';
+etoiles[2] = new Image();
+etoiles[2].src = 'images/3.png';
+etoiles[3] = new Image();
+etoiles[3].src = 'images/4.png';
+ 
 
 
 var stageWidth = 300;
 var stageHeight = 150;
 var starWidth = 10;
 var starHeight = 15;
-
-var stars = [];
 
 
 function spawnEtoile(){
@@ -51,7 +58,7 @@ function spawnEtoile(){
         yPosition: randomYPosition
     };
     
-    stars.push(newStar);
+    etoiles.push(newStar);
 
 }
 function resetReponse() {
