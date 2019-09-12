@@ -18,19 +18,37 @@
  *test transition fin
  *test fonctionnement des boutons
  */
+
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
-var img = new Image();
-img.onload = function(){
-context.drawImage(img,0,0,300,150);    
-};
-img.src = "images/bg.jpg";
+
+
 
 var spawnZone = canvas.style.height;
 
 var etoiles = [];
-
+spawnEtoile();
 function spawnEtoile(){
+    var length = 10;
+    context.translate(15,20);
+    context.rotate((Math.PI * 1 / 10));
+    for (var i = 5; i--;) {
+    context.lineTo(0, length);
+    // move origin to current same location as pen
+    context.translate(0, length);
+    // rotate the drawing board
+    context.rotate((Math.PI * 2 / 10));
+    // draw line down
+    context.lineTo(0, -length);
+    // again, move origin to pen...
+    context.translate(0, -length);
+    // ...and rotate, ready for next arm
+    context.rotate(-(Math.PI * 6 / 10));
+    }
+    context.lineTo(0, length);
+    context.closePath();
+// stroke the path, you could also .fill()
+    context.stroke();
     
 }
 function resetReponse() {
