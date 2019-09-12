@@ -50,7 +50,7 @@ function spawnEtoile(){
     };
     
     stars.push(newStar);
-    context.drawImage(images[3],randomXPosition,randomYPosition);
+    context.drawImage(images[Math.round(Math.random()*3)],randomXPosition,randomYPosition);
 }
 function resetReponse() {
     window.location.reload();
