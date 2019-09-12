@@ -32,6 +32,9 @@ var etoiles = [];
 
 function spawnEtoile(){
     
+    var img =document.write('<img src="images/'+ Math.round((Math.random()*3)+1)+ '.png" id="scream">'); 
+    
+     
 }
 function resetReponse() {
     window.location.reload();
