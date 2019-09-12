@@ -41,8 +41,8 @@ function spawnEtoile(){
     
   // console.log('ben');
    
-    var randomXPosition = Math.floor(Math.random() * canvas.width) + 1;
-    var randomYPosition = Math.floor(Math.random() * canvas.height) + 1;
+    var randomXPosition = Math.min(Math.max(Math.random() * canvas.width-50 , 10), 790);
+    var randomYPosition = Math.min(Math.max(Math.random() * canvas.height-47 + 1 , 10), 490);
      
      var newStar = {
         xPosition: randomXPosition,
