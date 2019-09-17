@@ -18,8 +18,10 @@
  *test transition fin
  *test fonctionnement des boutons
  */
+/* global transition */
+
 var canvas = document.getElementById("canvas");
-var context = canvas.getContext("2d");
+
 var img = new Image();
 
 img.onload = function(){
@@ -30,7 +32,6 @@ img.src = "images/bg.jpg";
 var score = 0;
 var rep = document.getElementById("q");
 
-var spawnZone = canvas.style.height;
 
 var images = new Array();
 images[0] = document.getElementById("i1");
@@ -40,6 +41,7 @@ images[3] = document.getElementById("i4");
 
 var stars = new Array();
 showScore();
+
 function spawnEtoile(){
     
   // console.log('ben');
@@ -63,9 +65,12 @@ function showScore(){
  rep.style.color="white";
  rep.innerHTML = "Votre scOre est : " + score;   
 }
-
-function round(){
-    
-    
-    
+function animate(element) {
+    transition.begin(element, {
+        property: "background-color",
+        from: "#ffffff",
+        to: "#ADB5C7",
+        duration: "2s",
+        timingFunction: "linear"
+    });
 }

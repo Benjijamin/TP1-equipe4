@@ -8,20 +8,23 @@ and open the template in the editor.
     Author     : 1532716
 */
 body{
-    background-color: black;
+    background-color: red;
 }
 
 
 
 #canvas{
     border: 5px solid white;
-    height: 800px; 
+    height:800px; 
     width :800px;
+  
 }
 
 #q{
     font-size: 40px;
-    position:absolute;
-    margin-left: 850px;
-    color:white;
+    text-align: right;
+    margin-right:790px;
+  
+   
 }
+
