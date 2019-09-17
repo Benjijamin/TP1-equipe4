@@ -53,7 +53,7 @@ function spawnEtoile(){
     }
     
     var etoile = document.createElement("img");
-    etoile.onclick = clicStar();
+  
     //prends une image au hasard
     etoile.src = images[Math.floor(Math.random()*4)]; 
     //identifie l'etoile comme la derniere creee
@@ -93,12 +93,7 @@ function showScore(){
  rep.innerHTML = "Votre scOre est : " + score; 
 }
 
-function animate(element) {
-    transition.begin(element, {
-        property: "background-color",
-        from: "#ffffff",
-        to: "#ADB5C7",
-        duration: "2s",
-        timingFunction: "linear"
-    });
+function animate() {
+    var sakamsd = document.getElementById('xyz');
+    sakamsd.style.backgroundColor = "black";
 }
