@@ -93,7 +93,7 @@ function showScore(){
  rep.innerHTML = "Votre scOre est : " + score; 
 }
 
-function animate() {
-    var sakamsd = document.getElementById('xyz');
-    sakamsd.style.backgroundColor = "black";
+function animer() {
+    var x = document.getElementById('xyz');
+    x.style.animationName = "wow";
 }

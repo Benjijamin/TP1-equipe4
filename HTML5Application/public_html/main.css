@@ -13,18 +13,24 @@ body{
 }
 
 #xyz{
-    position:fixed;
-    top:0;
-    left:0;
+    position:absolute;
+    top:0px;
+    left:0px;
     height:800px; 
     width :800px;
-    background-color: rgb(0,0,0,0);
     z-index: 2; 
-    transition: background-color 2s;
+    animation-duration: 2s;
+}
+
+@keyframes wow{
+    0%{background-color: rgb(0,0,0,0)}
+    50%{background-color: rgb(0,0,0,1)}
+    100%{background-color: rgb(0,0,0,0)}
 }
 
 #canvas{
     display: block;
+    position: relative;
     border: 5px solid white;
     height:800px; 
     width :800px;
