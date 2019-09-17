@@ -7,6 +7,13 @@ and open the template in the editor.
     Created on : 2019-09-10, 16:28:04
     Author     : 1532716
 */
-#canvas{
-    border: 2px solid red;
+#haha{
+    display: block;
+    height: 600px;
+    width: 600px;
+    border: 1px solid red;
+}
+
+.etoiles{
+    position:fixed;
 }

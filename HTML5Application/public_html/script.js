@@ -18,53 +18,19 @@
  *test transition fin
  *test fonctionnement des boutons
  */
-var canvas = document.getElementById("canvas");
-var context = canvas.getContext("2d");
-var img = new Image();
-
-img.onload = function(){
-context.drawImage(img,0,0,900,600);    
-};
-img.src = "images/bg.jpg";
-
-var spawnZone = canvas.style.height;
-
-var images = new Array();
-images[0] = document.getElementById("i1");
-images[1] = document.getElementById("i2");
-images[2] = document.getElementById("i3");
-images[3] = document.getElementById("i4");
-
 var stars = new Array();
 
+var images = new Array();
+images[0] = "images/1.png";
+images[1] = "images/2.png";
+images[2] = "images/3.png";
+images[3] = "images/4.png";
+
+
 function spawnEtoile(){
-    
-  // console.log('ben');
-   
-    var randomXPosition = Math.min(Math.max(Math.random() * canvas.width-50 , 10), 790);
-    var randomYPosition = Math.min(Math.max(Math.random() * canvas.height-47 + 1 , 10), 490);
-     
-     var newStar = {
-        xPosition: randomXPosition,
-        yPosition: randomYPosition
-    };
-    
-    stars.push(newStar);
-    context.drawImage(images[Math.round(Math.random()*3)],randomXPosition,randomYPosition);
-}
-
-function resetReponse() {
-    window.location.reload();
-}
-
-function showScore(){
-    
-    
-    
-}
-
-function round(){
-    
-    
-    
+    var etoile = document.createElement("img");
+    etoile.src = images[Math.floor(Math.random()*4)]; 
+    etoile.classList = "etoiles";
+    stars.push(etoile);
+    document.body.appendChild(etoile);
 }
