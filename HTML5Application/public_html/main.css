@@ -7,6 +7,21 @@ and open the template in the editor.
     Created on : 2019-09-10, 16:28:04
     Author     : 1532716
 */
+body{
+    background-color: black;
+}
+
+
+
 #canvas{
-    border: 2px solid red;
+    border: 5px solid white;
+    height: 800px; 
+    width :800px;
+}
+
+#q{
+    font-size: 40px;
+    position:absolute;
+    margin-left: 850px;
+    color:white;
 }

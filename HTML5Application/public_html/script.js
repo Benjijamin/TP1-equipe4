@@ -27,6 +27,9 @@ context.drawImage(img,0,0,900,600);
 };
 img.src = "images/bg.jpg";
 
+var score = 0;
+var rep = document.getElementById("q");
+
 var spawnZone = canvas.style.height;
 
 var images = new Array();
@@ -36,7 +39,7 @@ images[2] = document.getElementById("i3");
 images[3] = document.getElementById("i4");
 
 var stars = new Array();
-
+showScore();
 function spawnEtoile(){
     
   // console.log('ben');
@@ -56,10 +59,9 @@ function resetReponse() {
     window.location.reload();
 }
 
-function showScore(){
-    
-    
-    
+function showScore(){   
+ rep.style.color="white";
+ rep.innerHTML = "Votre scOre est : " + score;   
 }
 
 function round(){
