@@ -52,6 +52,7 @@ function spawnEtoile(){
     stars.push(newStar);
     context.drawImage(images[Math.round(Math.random()*3)],randomXPosition,randomYPosition);
 }
+
 function resetReponse() {
     window.location.reload();
 }
