@@ -20,6 +20,15 @@
  */
 var stars = new Array();
 
+var scene = new Array();
+// toutes les positions dans la scene et sont-ils vides(z)?
+scene[0] = {x:710,y:710,z:0};
+for(i = 0; i < 8; i++){
+    for(j = 0; j < 8; j++){
+        scene.push({x:100 * i + 10,y:100 * j + 10,z:0});
+    }    
+};
+
 var images = new Array();
 images[0] = "images/1.png";
 images[1] = "images/2.png";
@@ -28,9 +37,41 @@ images[3] = "images/4.png";
 
 
 function spawnEtoile(){
+    //reset les class pour chaque etoile
+    if(stars !== null){
+        for (i = 0; i<stars.length; i++ ){
+            stars[i].classList = "etoiles";
+        }
+    }
+    
     var etoile = document.createElement("img");
+    
+    //prends une image au hasard
     etoile.src = images[Math.floor(Math.random()*4)]; 
-    etoile.classList = "etoiles";
+    //identifie l'etoile comme la derniere creee
+    etoile.classList = "etoiles gg";
+    
+    
+    
+    //position random dans la scene, pas a cote d'une autre etoile
+    var loop = -1;
+    var n = Math.floor(Math.random()*64);
+        while(scene[n].z === 1)
+        {
+        n = Math.floor(Math.random()*64);
+        }
+    var pos = scene[n];
+    scene[n].z = 1;
+    
+    var top = pos.y;
+    var left = pos.x;
+    
+    etoile.style.top = top+'px';
+    etoile.style.left = left+'px';
+    
+    
+    
+    
     stars.push(etoile);
     document.body.appendChild(etoile);
 }
