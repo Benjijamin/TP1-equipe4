@@ -19,7 +19,9 @@ body{
     height:800px; 
     width :800px;
     z-index: 2; 
+    animation-name: wow;
     animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
 
 @keyframes wow{

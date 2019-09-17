@@ -62,6 +62,8 @@ function spawnEtoile(){
     
     //position random dans la scene, pas a cote d'une autre etoile
     var n = Math.floor(Math.random()*64);
+    var top = pos.y;
+    var left = pos.x;
     
     while(scene[n].z === 1)
     {
@@ -70,9 +72,6 @@ function spawnEtoile(){
   
     var pos = scene[n];
     scene[n].z = 1;
-    
-    var top = pos.y;
-    var left = pos.x;
     
     etoile.style.top = top+'px';
     etoile.style.left = left+'px';
@@ -93,7 +92,11 @@ function showScore(){
  rep.innerHTML = "Votre scOre est : " + score; 
 }
 
-function animer() {
+function clicEtoile() {
     var x = document.getElementById('xyz');
-    x.style.animationName = "wow";
+    x.style.animation = 'none';
+    //update l'element pour restarter l'animation
+    x.offsetHeight;
+    x.style.animation = null;
+
 }
