@@ -31,23 +31,21 @@ body{
 }
 
 #canvas{
-    display: block;
+    display: inline-block;
     position: relative;
-    border: 5px solid white;
+    border: 5px ridge white;
     height:800px; 
     width :800px;
-    float: left;
+    float: left
 }
 
-#lol{
-    margin-top:500px;
-
+#content{
+    width : 100%;
 }
 
 #score{
     font-size: 40px;
-    margin-right: 750px;
-    text-align: right;
+    text-align: center;
 }
 .etoiles{
     position:fixed;
@@ -60,6 +58,10 @@ body{
    margin: 100px;
    text-align:center;
 
+}
+
+#reset{
+    margin-top: 500px;
 }
 
 
