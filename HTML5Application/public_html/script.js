@@ -80,6 +80,9 @@ function spawnEtoile(){
     etoile.style.left = left+'px';
     
     stars.push(etoile);
+    if(stars.length == 64){
+        alert("good job ben");
+    }
     document.body.appendChild(etoile);
 }
 
@@ -101,7 +104,6 @@ animation();
 spawnEtoile();
 score++;
 showScore();
-
 }
 
 function animation(){
