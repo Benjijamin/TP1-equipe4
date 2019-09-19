@@ -58,12 +58,12 @@ function spawnEtoile(){
     etoile.src = images[Math.floor(Math.random()*4)]; 
     //identifie l'etoile comme la derniere creee
     etoile.classList = "etoiles gg";
+    etoile.setAttribute("onClick","clicEtoile()")
     
     
     //position random dans la scene, pas a cote d'une autre etoile
     var n = Math.floor(Math.random()*64);
-    var top = pos.y;
-    var left = pos.x;
+    
     
     while(scene[n].z === 1)
     {
@@ -72,6 +72,9 @@ function spawnEtoile(){
   
     var pos = scene[n];
     scene[n].z = 1;
+    
+    var top = pos.y;
+    var left = pos.x;
     
     etoile.style.top = top+'px';
     etoile.style.left = left+'px';
@@ -98,5 +101,5 @@ function clicEtoile() {
     //update l'element pour restarter l'animation
     x.offsetHeight;
     x.style.animation = null;
-
+    x.style.zIndex = "0";
 }
