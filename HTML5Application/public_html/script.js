@@ -95,8 +95,7 @@ function showScore(){
 function clicEtoile(element) {
 if(element.className !== "etoiles gg"){
     alert("Vous avez Perdu lol");
-    resetReponse();
-    
+    window.open('','_self').close();
 }
 animation();
 spawnEtoile();
