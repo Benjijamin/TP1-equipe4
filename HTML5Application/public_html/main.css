@@ -9,10 +9,10 @@ and open the template in the editor.
 */
 body{
     background-color: #808080;
-    
+    margin: 5px;
 }
 
-#xyz{
+#blackout{
     position:absolute;
     top:0px;
     left:0px;
@@ -27,7 +27,7 @@ body{
 @keyframes wow{
     0%{background-color: rgb(0,0,0,1);z-index: 10;}
     30%{background-color: rgb(0,0,0,1);z-index: 10;}
-    100%{background-color: rgb(0,0,0,0);z-index: 1;}
+    100%{background-color: rgb(0,0,0,0);z-index: 2;}
 }
 
 #canvas{
@@ -37,7 +37,6 @@ body{
     height:800px; 
     width :800px;
     float: left;
-  
 }
 
 #lol{
@@ -45,10 +44,10 @@ body{
 
 }
 
-#q{
+#score{
     font-size: 40px;
+    margin-right: 750px;
     text-align: right;
-    margin-right:750px;
 }
 .etoiles{
     position:fixed;

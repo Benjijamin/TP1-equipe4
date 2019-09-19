@@ -20,97 +20,128 @@
  */
 /* global transition */
 
-var stars = new Array();
 
-var scene = new Array();
-// toutes les positions dans la scene et sont-ils vides(z)?
-scene[0] = {x:710,y:710,z:0};
-for(i = 0; i < 8; i++){
-    for(j = 0; j < 8; j++){
-        scene.push({x:100 * i + 10,y:100 * j + 10,z:0});
-    }    
-};
+//objet scene sert a determiner les positions des etoiles dans l'ecran et si ils sont deja occupes
+class Scene 
+{
+    tab;
 
-var score = 0;
-var rep = document.getElementById("q");
+    constructor(h, l) 
+    {
+        this.tab = new Array();
+        this.build(h, l);
+    }
 
+    build(h, l) 
+    {
+        for (this.i = 0; this.i < h; this.i++) 
+        {
+            for (this.j = 0; this.j < l; this.j++) 
+            {
+                this.tab.push({x: 100 * this.j + 10, y: 100 * this.i + 10, z: 0});
+            }
+        }
+        ;
+        this.tab[0] = {x: l * 100 - 90, y: h * 100 - 90, z: 0};
+    }
+}
+
+const sc = document.getElementById("score");
+const blackout = document.getElementById('blackout');
+var scene = new Scene(8, 8);
 
 var images = new Array();
 images[0] = "images/1.png";
 images[1] = "images/2.png";
 images[2] = "images/3.png";
 images[3] = "images/4.png";
+images[4] = "images/5.png";
+images[5] = "images/6.png";
 
+var score = 0;
 var stars = new Array();
+
+
 showScore();
 spawnEtoile();
 
-function spawnEtoile(){
+function spawnEtoile() 
+{
     //reset les class pour chaque etoile
-    if(stars !== null){
-        for (i = 0; i<stars.length; i++ ){
+    if (stars !== null) 
+    {
+        for (i = 0; i < stars.length; i++) 
+        {
             stars[i].classList = "etoiles";
         }
     }
-    
+
     var etoile = document.createElement("img");
-  
+
     //prends une image au hasard
-    etoile.src = images[Math.floor(Math.random()*4)]; 
+    etoile.src = images[Math.floor(Math.random() * 6)];
     //identifie l'etoile comme la derniere creee
-    etoile.classList = "etoiles gg";
-    etoile.setAttribute("onClick","clicEtoile(this)");
-    
-    
+    etoile.classList = "etoiles last";
+    etoile.setAttribute("onClick", "clicEtoile(this)");
+
+
     //position random dans la scene, pas a cote d'une autre etoile
-    var n = Math.floor(Math.random()*64);
-    
-    while(scene[n].z === 1)
+    var n = Math.floor(Math.random() * 64);
+    while (scene.tab[n].z === 1)
     {
-    n = Math.floor(Math.random()*64);
-    };
-  
-    var pos = scene[n];
-    scene[n].z = 1;
-    
+        n = Math.floor(Math.random() * 64);
+    }
+    scene.tab[n].z = 1;
+    var pos = scene.tab[n];
     var top = pos.y;
     var left = pos.x;
-    
-    etoile.style.top = top+'px';
-    etoile.style.left = left+'px';
-    
+    etoile.style.top = top + 'px';
+    etoile.style.left = left + 'px';
+
+
+
     stars.push(etoile);
-    if(stars.length === 64){
+    document.body.appendChild(etoile);
+    
+    //si par miracle quelqu'un se rends jusqu'a la fin
+    if (stars.length === 64) 
+    {
         alert("good job ben");
     }
-    document.body.appendChild(etoile);
 }
 
-function resetReponse() {
+function resetReponse() 
+{
     window.location.reload();
 }
 
-function showScore(){   
- rep.style.color="white";
- rep.innerHTML = "Votre score est : " + score; 
+function showScore() 
+{
+    sc.style.color = "white";
+    sc.innerHTML = "Votre score est : " + score;
 }
 
-function clicEtoile(element) {
-if(element.className !== "etoiles gg"){
-    alert("Vous avez Perdu lol");
-    window.open('','_self').close();
-}
-animation();
-spawnEtoile();
-score++;
-showScore();
+function clicEtoile(element) 
+{
+    //failcheck
+    if (element.className !== "etoiles last") 
+    {
+        alert("Vous avez Perdu");
+        resetReponse();
+    }
+
+
+    blackOut();
+    spawnEtoile();
+    score++;
+    showScore();
 }
 
-function animation(){
-    var x = document.getElementById('xyz');
-    x.style.animation = 'none';
+function blackOut() 
+{
+    blackout.style.animation = 'none';
     //update l'element pour restarter l'animation
-    x.offsetHeight;
-    x.style.animation = null;
-    x.style.zIndex = "0";    
+    blackout.offsetHeight;
+    blackout.style.animation = null;
+    blackout.style.zIndex = "0";
 }
