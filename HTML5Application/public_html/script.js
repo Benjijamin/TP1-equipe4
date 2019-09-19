@@ -102,3 +102,4 @@ function clicEtoile() {
     x.style.animation = null;
     x.style.zIndex = "0";
 }
+ben
