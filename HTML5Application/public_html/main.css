@@ -41,7 +41,7 @@ body{
 }
 
 #lol{
-    margin-top:800px;
+    margin-top:500px;
 
 }
 
@@ -53,6 +53,14 @@ body{
 .etoiles{
     position:fixed;
     z-index: 2;
+}
+
+#regles{
+   font-size:75px;
+   color:white;
+   margin: 100px;
+   text-align:center;
+
 }
 
 
