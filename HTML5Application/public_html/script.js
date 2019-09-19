@@ -62,8 +62,7 @@ function spawnEtoile(){
     
     //position random dans la scene, pas a cote d'une autre etoile
     var n = Math.floor(Math.random()*64);
-    var top = pos.y;
-    var left = pos.x;
+   
     
     while(scene[n].z === 1)
     {
@@ -71,6 +70,8 @@ function spawnEtoile(){
     };
   
     var pos = scene[n];
+     var top = pos.y;
+    var left = pos.x;
     scene[n].z = 1;
     
     etoile.style.top = top+'px';
