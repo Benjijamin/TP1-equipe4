@@ -81,6 +81,7 @@ function spawnEtoile(){
     
     
     stars.push(etoile);
+    clicEtoile();
     document.body.appendChild(etoile);
 }
 
@@ -90,7 +91,7 @@ function resetReponse() {
 
 function showScore(){   
  rep.style.color="white";
- rep.innerHTML = "Votre scOre est : " + score; 
+ rep.innerHTML = "Votre score est : " + score; 
 }
 
 function clicEtoile() {
