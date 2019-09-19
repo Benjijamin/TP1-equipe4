@@ -58,12 +58,11 @@ function spawnEtoile(){
     etoile.src = images[Math.floor(Math.random()*4)]; 
     //identifie l'etoile comme la derniere creee
     etoile.classList = "etoiles gg";
-    etoile.setAttribute("onClick","clicEtoile()")
+    etoile.setAttribute("onClick","clicEtoile()");
     
     
     //position random dans la scene, pas a cote d'une autre etoile
     var n = Math.floor(Math.random()*64);
-    
     
     while(scene[n].z === 1)
     {
