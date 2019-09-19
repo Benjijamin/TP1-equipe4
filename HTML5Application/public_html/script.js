@@ -80,7 +80,7 @@ function spawnEtoile(){
     etoile.style.left = left+'px';
     
     stars.push(etoile);
-    if(stars.length == 64){
+    if(stars.length === 64){
         alert("good job ben");
     }
     document.body.appendChild(etoile);
