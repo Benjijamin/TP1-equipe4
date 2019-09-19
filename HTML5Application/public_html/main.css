@@ -40,20 +40,19 @@ body{
   
 }
 
+#lol{
+    margin-top:800px;
+
+}
+
 #q{
     font-size: 40px;
     text-align: right;
-    margin-right:790px;
+    margin-right:750px;
 }
 .etoiles{
     position:fixed;
     z-index: 2;
 }
 
-#lol{
-    
-    margin-top: 800px;
-    
-    
-}
 

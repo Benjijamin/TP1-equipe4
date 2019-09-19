@@ -43,6 +43,7 @@ images[3] = "images/4.png";
 
 var stars = new Array();
 showScore();
+spawnEtoile();
 
 function spawnEtoile(){
     //reset les class pour chaque etoile
@@ -58,7 +59,7 @@ function spawnEtoile(){
     etoile.src = images[Math.floor(Math.random()*4)]; 
     //identifie l'etoile comme la derniere creee
     etoile.classList = "etoiles gg";
-    etoile.setAttribute("onClick","clicEtoile()");
+    etoile.setAttribute("onClick","clicEtoile(this)");
     
     
     //position random dans la scene, pas a cote d'une autre etoile
@@ -78,9 +79,6 @@ function spawnEtoile(){
     etoile.style.top = top+'px';
     etoile.style.left = left+'px';
     
-    
-    
-    
     stars.push(etoile);
     document.body.appendChild(etoile);
 }
@@ -91,15 +89,27 @@ function resetReponse() {
 
 function showScore(){   
  rep.style.color="white";
- rep.innerHTML = "Votre scOre est : " + score; 
+ rep.innerHTML = "Votre score est : " + score; 
 }
 
-function clicEtoile() {
+function clicEtoile(element) {
+if(element.className !== "etoiles gg"){
+    alert("Vous avez Perdu lol");
+    resetReponse();
+    
+}
+animation();
+spawnEtoile();
+score++;
+showScore();
+
+}
+
+function animation(){
     var x = document.getElementById('xyz');
     x.style.animation = 'none';
     //update l'element pour restarter l'animation
     x.offsetHeight;
     x.style.animation = null;
-    x.style.zIndex = "0";
+    x.style.zIndex = "0";    
 }
-ben
