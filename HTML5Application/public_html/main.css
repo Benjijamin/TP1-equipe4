@@ -36,8 +36,11 @@ body{
     border: 5px solid white;
     height:800px; 
     width :800px;
-    
-  
+    float:left;
+}
+
+#lol{
+    margin-top:800px;
 }
 
 #q{

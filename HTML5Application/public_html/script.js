@@ -58,7 +58,7 @@ function spawnEtoile(){
     etoile.src = images[Math.floor(Math.random()*4)]; 
     //identifie l'etoile comme la derniere creee
     etoile.classList = "etoiles gg";
-    etoile.setAttribute("onClick","clicEtoile()");
+    etoile.setAttribute("onClick","clicEtoile(this)");
     
     
     //position random dans la scene, pas a cote d'une autre etoile
@@ -78,9 +78,6 @@ function spawnEtoile(){
     etoile.style.top = top+'px';
     etoile.style.left = left+'px';
     
-    
-    
-    
     stars.push(etoile);
     document.body.appendChild(etoile);
 }
@@ -94,11 +91,20 @@ function showScore(){
  rep.innerHTML = "Votre scOre est : " + score; 
 }
 
-function clicEtoile() {
+function clicEtoile(element) {
+if(element.className !== "etoiles gg"){
+    alert("t bad");
+}
+animation();
+spawnEtoile();
+
+}
+
+function animation(){
     var x = document.getElementById('xyz');
     x.style.animation = 'none';
     //update l'element pour restarter l'animation
     x.offsetHeight;
     x.style.animation = null;
-    x.style.zIndex = "0";
+    x.style.zIndex = "0";    
 }
