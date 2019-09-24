@@ -22,21 +22,21 @@
 
 
 //objet scene sert a determiner les positions des etoiles dans l'ecran et si ils sont deja occupes
-class Scene 
+class Scene
 {
     tab;
 
-    constructor(h, l) 
+    constructor(h, l)
     {
         this.tab = new Array();
         this.build(h, l);
     }
 
-    build(h, l) 
+    build(h, l)
     {
-        for (this.i = 0; this.i < h; this.i++) 
+        for (this.i = 0; this.i < h; this.i++)
         {
-            for (this.j = 0; this.j < l; this.j++) 
+            for (this.j = 0; this.j < l; this.j++)
             {
                 this.tab.push({x: 100 * this.j + 10, y: 100 * this.i + 10, z: 0});
             }
@@ -47,6 +47,7 @@ class Scene
 }
 
 var level = 1;
+const lvl = document.getElementById("lvl");
 const sc = document.getElementById("score");
 const blackout = document.getElementById('blackout');
 var scene = new Scene(8, 8);
@@ -64,14 +65,15 @@ var stars = new Array();
 
 
 showScore();
+showLvl();
 spawnEtoile();
 
-function spawnEtoile() 
+function spawnEtoile()
 {
     //reset les class pour chaque etoile
-    if (stars !== null) 
+    if (stars !== null)
     {
-        for (i = 0; i < stars.length; i++) 
+        for (i = 0; i < stars.length; i++)
         {
             stars[i].classList = "etoiles";
             stars[i].id = i;
@@ -114,44 +116,51 @@ function spawnEtoile()
     
     
     document.body.appendChild(etoile);
-    
+
     //si par miracle quelqu'un se rends jusqu'a la fin
+
     if (score === 30) 
     {
         alert("good job ben");
     }
     
     //check level
-    if (score >= 10){
+    if (score >= 9){
         level = 2;
     }
     
-    if (score >= 2){
+    if (score >= 19){
         level = 3;
     }
 }
 
-function resetReponse() 
+function resetReponse()
 {
     window.location.reload();
 }
 
-function showScore() 
+function showScore()
 {
     sc.style.color = "white";
     sc.innerHTML = "Votre score est : " + score;
 }
 
+function showLvl()
+{
+    lvl.style.color = "white";
+    lvl.innerHTML = "Vous êtes au niveau : " + level + "/3";
+}
+
 async function clicEtoile(element) 
 {
     //failcheck
-    if (element.className !== "etoiles last") 
+    if (element.className !== "etoiles last")
     {
         alert("Vous avez Perdu");
         resetReponse();
     }
 
-//level 3
+    //level 3
     if(level === 3){
         for (var i = 0; i < stars.length; i++) {
             let allo = document.getElementById(i);
@@ -172,7 +181,8 @@ function sleep(time){
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
-function blackOut() 
+
+function blackOut()
 {
     blackout.style.animation = 'none';
     //update l'element pour restarter l'animation

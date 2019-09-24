@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/U:/PROGWEB/TP1-equipe4/HTML5Application/public_html/index.html</file>
+            <file>file:/U:/PROGWEB/TP1-equipe4/HTML5Application/public_html/script.js</file>
+            <file>file:/U:/PROGWEB/TP1-equipe4/HTML5Application/public_html/main.css</file>
+        </group>
+>>>>>>> 07cf4cff82902dd19bd9d4c012c61992839b5b2a
     </open-files>
 </project-private>

@@ -47,13 +47,18 @@ body{
     font-size: 40px;
     text-align: center;
 }
+
+#lvl{
+    font-size: 40px;
+    text-align: center;
+}
 .etoiles{
     position:fixed;
     z-index: 2;
 }
 
 #regles{
-   font-size:75px;
+   font-size:50px;
    color:white;
    margin: 100px;
    text-align:center;
