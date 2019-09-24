@@ -102,11 +102,13 @@ function spawnEtoile()
     etoile.style.left = left + 'px';
 
     //level 2
-    if(level === 2){
+    if(level >= 2){
         let rand = Math.floor(Math.random()* stars.length);
         document.getElementById(rand).remove();
         stars.splice(rand,1);
     }
+    
+    
     
     stars.push(etoile);
     
@@ -114,17 +116,17 @@ function spawnEtoile()
     document.body.appendChild(etoile);
     
     //si par miracle quelqu'un se rends jusqu'a la fin
-    if (stars.length === 64) 
+    if (score === 30) 
     {
         alert("good job ben");
     }
     
     //check level
-    if (stars.length >= 10){
+    if (score >= 10){
         level = 2;
     }
     
-    if (stars.length >= 20){
+    if (score >= 2){
         level = 3;
     }
 }
@@ -140,7 +142,7 @@ function showScore()
     sc.innerHTML = "Votre score est : " + score;
 }
 
-function clicEtoile(element) 
+async function clicEtoile(element) 
 {
     //failcheck
     if (element.className !== "etoiles last") 
@@ -149,7 +151,17 @@ function clicEtoile(element)
         resetReponse();
     }
 
-
+//level 3
+    if(level === 3){
+        for (var i = 0; i < stars.length; i++) {
+            let allo = document.getElementById(i);
+            if( allo !== null){
+                let rand = Math.floor(Math.random()* 6);
+                allo.src = images[rand];
+            }
+            await sleep(200);
+        }
+    }
     blackOut();
     spawnEtoile();
     score++;
