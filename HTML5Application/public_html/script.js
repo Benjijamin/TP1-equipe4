@@ -22,21 +22,21 @@
 
 
 //objet scene sert a determiner les positions des etoiles dans l'ecran et si ils sont deja occupes
-class Scene 
+class Scene
 {
     tab;
 
-    constructor(h, l) 
+    constructor(h, l)
     {
         this.tab = new Array();
         this.build(h, l);
     }
 
-    build(h, l) 
+    build(h, l)
     {
-        for (this.i = 0; this.i < h; this.i++) 
+        for (this.i = 0; this.i < h; this.i++)
         {
-            for (this.j = 0; this.j < l; this.j++) 
+            for (this.j = 0; this.j < l; this.j++)
             {
                 this.tab.push({x: 100 * this.j + 10, y: 100 * this.i + 10, z: 0});
             }
@@ -65,12 +65,12 @@ var stars = new Array();
 showScore();
 spawnEtoile();
 
-function spawnEtoile() 
+function spawnEtoile()
 {
     //reset les class pour chaque etoile
-    if (stars !== null) 
+    if (stars !== null)
     {
-        for (i = 0; i < stars.length; i++) 
+        for (i = 0; i < stars.length; i++)
         {
             stars[i].classList = "etoiles";
         }
@@ -102,29 +102,29 @@ function spawnEtoile()
 
     stars.push(etoile);
     document.body.appendChild(etoile);
-    
+
     //si par miracle quelqu'un se rends jusqu'a la fin
-    if (stars.length === 64) 
+    if (stars.length === 64)
     {
         alert("good job ben");
     }
 }
 
-function resetReponse() 
+function resetReponse()
 {
     window.location.reload();
 }
 
-function showScore() 
+function showScore()
 {
     sc.style.color = "white";
     sc.innerHTML = "Votre score est : " + score;
 }
 
-function clicEtoile(element) 
+function clicEtoile(element)
 {
     //failcheck
-    if (element.className !== "etoiles last") 
+    if (element.className !== "etoiles last")
     {
         alert("Vous avez Perdu");
         resetReponse();
@@ -137,7 +137,7 @@ function clicEtoile(element)
     showScore();
 }
 
-function blackOut() 
+function blackOut()
 {
     blackout.style.animation = 'none';
     //update l'element pour restarter l'animation
