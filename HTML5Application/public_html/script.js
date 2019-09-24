@@ -45,7 +45,7 @@ class Scene
         this.tab[0] = {x: l * 100 - 90, y: h * 100 - 90, z: 0};
     }
 }
-
+const lvl = document.getElementById("lvl");
 const sc = document.getElementById("score");
 const blackout = document.getElementById('blackout');
 var scene = new Scene(8, 8);
@@ -59,10 +59,12 @@ images[4] = "images/5.png";
 images[5] = "images/6.png";
 
 var score = 0;
+var level = 0;
 var stars = new Array();
 
 
 showScore();
+showLvl();
 spawnEtoile();
 
 function spawnEtoile()
@@ -120,6 +122,13 @@ function showScore()
     sc.style.color = "white";
     sc.innerHTML = "Votre score est : " + score;
 }
+
+function showLvl()
+{
+    lvl.style.color = "white";
+    lvl.innerHTML = "Vous êtes au niveau : " + level + "/3";
+}
+
 
 function clicEtoile(element)
 {
