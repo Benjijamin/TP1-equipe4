@@ -132,6 +132,8 @@ function spawnEtoile()
     if (score >= 19){
         level = 3;
     }
+    
+    showLvl();
 }
 
 function resetReponse()
