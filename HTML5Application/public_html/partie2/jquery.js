@@ -15,7 +15,8 @@
         });
         
    $(document).ready(function(){
-        $(".show ul").click(function(){
-            $("#ben").append("<li>"++"</li>"); 
+        $(".show ul").click(function(event){
+            alert(event.target.id);
+            $("#ben").append("<li>"+"</li>"); 
         });
     });
