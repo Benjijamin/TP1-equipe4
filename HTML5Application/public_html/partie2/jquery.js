@@ -6,12 +6,23 @@
  */
 
 
-        $(function(){
-        setInterval(function(){
-        $(".show ul").animate({marginLeft: - 200}, 800, function(){
-        $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
-        })
-        }, 2000);
+        $(function()
+		{
+			setInterval(function()
+			{
+				$(".show ul").animate(
+				{
+					marginLeft: - 200
+				}, 800, function()
+					{
+						$(this).css(
+						{
+							marginLeft:0
+						}
+							).find("li:last").after($(this).find("li:first"));
+					}
+				)
+        }, 10);
         });
         
    $(document).ready(function(){
