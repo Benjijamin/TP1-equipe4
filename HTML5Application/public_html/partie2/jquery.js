@@ -11,12 +11,22 @@
         $(".show ul").animate({marginLeft: - 200}, 800, function(){
         $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
         })
-        }, 2000);
+        }, 3000);
         });
         
    $(document).ready(function(){
         $(".show ul").click(function(event){
-            alert(event.target.id);
-            $("#ben").append("<li>"+"</li>"); 
-        });
-    });
+            var target = event.target.id;
+            var score = 0;
+            var tab = [];          
+           for (var i = 0; i < tab.length; i++) {
+                if(tab[i] == target){
+                    
+            }else{
+                    tab[i]= target;
+                   $("#ben").append("<td>"+tab[i]+"</td>");
+            }   
+             
+            }});
+        
+                });
