@@ -4,7 +4,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+        var tab = [{color:"Mauve",score:0},{color:"Rose",score:0},{color:"Rouge",score:0},{color:"Orange",score:0}];
 
         $(function(){
         setInterval(function(){
@@ -17,8 +17,22 @@
    $(document).ready(function(){
         $(".show ul").click(function(event){
             var target = event.target.id;
-            $("#tab").find(target);
-             $("#tab").append("<tr>"+"<td>"+target+"</td>"+"</tr");
+            for (var i = 0; i < tab.length; i++) {
+                    if(!$("td:contains("+target+")").length>0){
+                        tab[i].score++;
+                     $("#yo").append("<tr>"+"<td>"+target+ "    " +tab[i].score+ "</td>"+"</tr"); 
+                 }else{
+                     tab[i].score++;
+                     $("td:contains("+target+")").html("<tr>"+"<td>"+target+ "    " +tab[i].score+ "</td>"+"</tr");
+                 }
+                 
+                     break;
+}
+                
+            
+            
+            
+            
             });   
              
             });
