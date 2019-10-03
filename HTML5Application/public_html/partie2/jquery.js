@@ -25,7 +25,7 @@
                      tab[i].score++;
                      $("td:contains("+target+")").html("<tr>"+"<td>"+target+ "    " +tab[i].score+ "</td>"+"</tr");
                  }
-                 
+                 allo brisé
                      break;
 }
                 
