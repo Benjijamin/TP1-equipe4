@@ -17,16 +17,9 @@
    $(document).ready(function(){
         $(".show ul").click(function(event){
             var target = event.target.id;
-            var score = 0;
-            var tab = [];          
-           for (var i = 0; i < tab.length; i++) {
-                if(tab[i] == target){
-                    
-            }else{
-                    tab[i]= target;
-                   $("#ben").append("<td>"+tab[i]+"</td>");
-            }   
+            $("#tab").find(target);
+             $("#tab").append("<tr>"+"<td>"+target+"</td>"+"</tr");
+            });   
              
-            }});
+            });
         
-                });
