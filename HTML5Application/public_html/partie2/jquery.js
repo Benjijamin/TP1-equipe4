@@ -15,19 +15,26 @@
         });
         
    $(document).ready(function(){
-        $(".show ul").click(function(event){
+        $(".show ul").click(function(event)
+		{
             var target = event.target.id;
-            for (var i = 0; i < tab.length; i++) {
-                    if(!$("td:contains("+target+")").length>0){
-                        tab[i].score++;
-                     $("#yo").append("<tr>"+"<td>"+target+ "    " +tab[i].score+ "</td>"+"</tr"); 
-                 }else{
-                     tab[i].score++;
-                     $("td:contains("+target+")").html("<tr>"+"<td>"+target+ "    " +tab[i].score+ "</td>"+"</tr");
-                 }
-                 allo brisé
-                     break;
-}
+			var carre;
+			for(var i = 0; i < tab.length; i++)
+			{
+				if(tab[i].color == target)
+				{
+					carre = tab[i];
+				}
+			}
+				 var fuckjquery = carre.color
+				 
+			if(!$("td:contains("+carre.color+")").length>0)
+			{
+			    $("#yo").append("<tr>").append("<td>"+ carre.color + "    " + carre.score + "</td>" ).append($("<img />").attr("src","images/x.png").attr("height","10").attr("width","10").attr("id","x"+fuckjquery).click(function(event){$("td:contains("+target+")").remove();$("#x"+target).remove();carre.score = 0;})).append("</tr>");
+			}
+			carre.score++;
+			$("td:contains("+carre.color+")").text(carre.color+ "    " +carre.score);
+
                 
             
             
